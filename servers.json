@@ -1,0 +1,196 @@
+{
+    "active": {
+        "81.25.18.133:55580": {
+            "players": {
+                "2": {
+                    "clientId": "2",
+                    "name": "^7[^7gt^7]^7neiT^4.",
+                    "mddId": "2640",
+                    "logged": true,
+                    "country": "CZ",
+                    "nospec": false,
+                    "model": "n_duck",
+                    "headmodel": "wormsoulman_red"
+                },
+                "25": {
+                    "clientId": "25",
+                    "name": "^8HEJAZI",
+                    "mddId": "12705",
+                    "logged": true,
+                    "country": "EG",
+                    "nospec": false,
+                    "model": "major/blue",
+                    "headmodel": "major/blue"
+                }
+            },
+            "map": "kineterra1",
+            "hostname": "^7|^1|^4| ^3EU ^410gbit ^7fastcaps ^3I",
+            "defrag": "cpm.2",
+            "scores": {
+                "num_players": "2",
+                "speed": "1775",
+                "speed_player_num": "-1",
+                "speed_player_name": "^8HEJAZI",
+                "players": [
+                    {
+                        "player_num": "2",
+                        "time": "0",
+                        "ping": "16",
+                        "follow_num": "-1"
+                    },
+                    {
+                        "player_num": "25",
+                        "time": "0",
+                        "ping": "132",
+                        "follow_num": "-1"
+                    }
+                ]
+            },
+            "address": "81.25.18.133:55580",
+            "timestamp": "2022-12-26 19:10:57.339985"
+        },
+        "81.25.18.133:55576": {
+            "players": {
+                "18": {
+                    "clientId": "18",
+                    "name": "your_name_you_wa\u0004",
+                    "mddId": "13098",
+                    "logged": true,
+                    "country": "PL",
+                    "nospec": false,
+                    "model": "klesk/red",
+                    "headmodel": "klesk/red"
+                },
+                "20": {
+                    "clientId": "20",
+                    "name": "XYLIGAN",
+                    "mddId": "4631",
+                    "logged": true,
+                    "country": "RU",
+                    "nospec": false,
+                    "model": "uriel/fearuth",
+                    "headmodel": "uriel/fearuth"
+                }
+            },
+            "map": "mistes-quickmix02",
+            "hostname": "^7|^1|^4| ^3EU ^410gbit ^7cpm ^3II",
+            "defrag": "cpm",
+            "scores": {
+                "num_players": "2",
+                "speed": "1275",
+                "speed_player_num": "-1",
+                "speed_player_name": "goluboi",
+                "players": [
+                    {
+                        "player_num": "20",
+                        "time": "70616",
+                        "ping": "84",
+                        "follow_num": "-1"
+                    },
+                    {
+                        "player_num": "18",
+                        "time": "80992",
+                        "ping": "32",
+                        "follow_num": "-1"
+                    }
+                ]
+            },
+            "address": "81.25.18.133:55576",
+            "timestamp": "2022-12-26 19:10:57.715584"
+        },
+        "81.25.18.133:55563": {
+            "players": {
+                "5": {
+                    "clientId": "5",
+                    "name": "^9<^7acc^9/^7Silex^6..",
+                    "mddId": "10576",
+                    "logged": true,
+                    "country": "DE",
+                    "nospec": false,
+                    "model": "bones/default",
+                    "headmodel": "bones/default"
+                }
+            },
+            "map": "dumbthology",
+            "hostname": "^7|^1|^4| ^3EU ^410gbit ^7mixed ^3IV",
+            "defrag": "vq3",
+            "scores": {
+                "num_players": "1",
+                "speed": "954",
+                "speed_player_num": "5",
+                "speed_player_name": "",
+                "players": [
+                    {
+                        "player_num": "5",
+                        "time": "0",
+                        "ping": "36",
+                        "follow_num": "-1"
+                    }
+                ]
+            },
+            "address": "81.25.18.133:55563",
+            "timestamp": "2022-12-26 19:10:57.967589"
+        },
+        "81.25.18.133:55575": {
+            "players": {},
+            "map": "test_bigbox",
+            "hostname": "^7|^1|^4| ^3EU ^410gbit ^7cpm ^3I",
+            "defrag": "cpm",
+            "scores": {
+                "num_players": "0",
+                "speed": "0",
+                "speed_player_num": "-1",
+                "speed_player_name": "",
+                "players": []
+            },
+            "address": "81.25.18.133:55575",
+            "timestamp": "2022-12-26 19:10:58.069161"
+        },
+        "81.25.18.133:55570": {
+            "players": {},
+            "map": "amd32-RUN2",
+            "hostname": "^7|^1|^4| ^3EU ^410gbit ^7vq3 ^3I",
+            "defrag": "vq3",
+            "scores": {
+                "num_players": "0",
+                "speed": "0",
+                "speed_player_num": "-1",
+                "speed_player_name": "",
+                "players": []
+            },
+            "address": "81.25.18.133:55570",
+            "timestamp": "2022-12-26 19:10:58.173134"
+        },
+        "81.25.18.133:55571": {
+            "players": {},
+            "map": "amd32-RUN2",
+            "hostname": "^7|^1|^4| ^3EU ^410gbit ^7vq3 ^3II",
+            "defrag": "vq3",
+            "scores": {
+                "num_players": "0",
+                "speed": "0",
+                "speed_player_num": "-1",
+                "speed_player_name": "",
+                "players": []
+            },
+            "address": "81.25.18.133:55571",
+            "timestamp": "2022-12-26 19:10:58.335553"
+        },
+        "81.25.18.133:55560": {
+            "players": {},
+            "map": "test_bigbox",
+            "hostname": "^7|^1|^4| ^3EU ^410gbit ^7mixed ^3I",
+            "defrag": "vq3",
+            "scores": {
+                "num_players": "0",
+                "speed": "0",
+                "speed_player_num": "-1",
+                "speed_player_name": "",
+                "players": []
+            },
+            "address": "81.25.18.133:55560",
+            "timestamp": "2022-12-26 19:10:58.472023"
+        }
+    },
+    "empty": {}
+}
