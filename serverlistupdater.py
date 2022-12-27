@@ -73,6 +73,7 @@ def get_server_list():
         json.dump(allservers, outfile, indent=4)
 
 def transfer_file_to_container():
+    print("docker cp " + serverlist.servers_file_location + " " + serverlist.container_file_location)
     os.system("docker cp " + serverlist.servers_file_location + " " + serverlist.container_file_location)
 
 
