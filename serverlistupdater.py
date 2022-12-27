@@ -60,7 +60,6 @@ def get_server_list():
         data = get_server_data(serverdata)
 
         if data is None:
-            print("Failed to get data from server: " + serverdata['ip'] + ":" + str(serverdata['port']))
             continue
 
         if data['scores']['num_players'] == '0':
@@ -73,7 +72,6 @@ def get_server_list():
         json.dump(allservers, outfile, indent=4)
 
 def transfer_file_to_container():
-    print("docker cp " + serverlist.servers_file_location + " " + serverlist.container_file_location)
     os.system("docker cp " + serverlist.servers_file_location + " " + serverlist.container_file_location)
 
 
