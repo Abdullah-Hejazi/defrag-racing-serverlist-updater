@@ -20,18 +20,6 @@ class Server:
             print(e)
             self.connected = False
 
-    def get_status(self):
-        self.socket.sendall(b'\xff\xff\xff\xffgetstatus\x00')
-        data = self.socket.recv(4096)
-        
-        data = data[19:]
-
-        serverdata, players = self.parse_response_body(data)
-
-        serverdata['players'] = self.parse_players(players)
-
-        return serverdata
-
     def get_rcon_data(self, rconpass):
         self.socket.sendall(b'\xff\xff\xff\xffrcon ' + bytes(rconpass, encoding='utf8') + b' score\x00')
         data = self.socket.recv(4096)
@@ -69,6 +57,36 @@ class Server:
         }
 
         return result
+
+    def get_data(self):
+        self.socket.sendall(b'\xff\xff\xff\xffgetstatus\x00')
+        data = self.socket.recv(4096)
+
+        serverdata, players = self.parse_response_body(data[19:])
+
+        serverdata['players'] = self.parse_players(players)
+
+        result = {
+            'players': serverdata['players'],
+            'map': serverdata['mapname'],
+            'hostname': serverdata['sv_hostname'],
+            'defrag': self.get_game_mode(serverdata),
+            'scores': {
+                'num_players': len(serverdata['players']),
+                'speed': 0,
+                'speed_player_num': 0,
+                'speed_player_name': "",
+                'players': serverdata['players']
+            }
+        }
+
+        return result
+
+    def get_game_mode(self, serverdata):
+        physics = 'cpm' if serverdata['df_promode'] == '1' else 'vq3'
+        mode = '.2' if serverdata['defrag_mode'] == '2' else ''
+
+        return physics + mode
 
     def get_player_info(self, player, rconpass):
         self.socket.sendall(b'\xff\xff\xff\xffrcon ' + bytes(rconpass, encoding='utf8') + b' dumpuser ' + bytes(player['clientId'], encoding='utf8') + b'\x00')
@@ -133,8 +151,13 @@ class Server:
             if line == b'':
                 continue
 
-            player = line.split(b' ')
-            players.append(dict(zip(('score', 'ping', 'name'), player)))
+            # convert line to string
+            line = line.decode('utf8')
+
+            player = dict(zip(('score', 'ping', 'name'), line.split(' ')))
+            players.append({
+                'name': player['name'],
+            })
 
         return players
 

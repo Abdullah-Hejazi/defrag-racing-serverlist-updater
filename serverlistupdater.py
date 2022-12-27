@@ -25,7 +25,13 @@ def parse_server_data(data):
 def get_server_data(serverdata):
     connection = server.Server(serverdata['ip'], serverdata['port'])
 
-    result = connection.get_rcon_data(serverdata['rconpassword'])
+    if 'rconpassword' in serverdata:
+        result = connection.get_rcon_data(serverdata['rconpassword'])
+    else:
+        result = connection.get_data()
+
+    if result is None:
+        return None
 
     result['address'] = serverdata['ip'] + ':' + str(serverdata['port'])
 
@@ -42,6 +48,10 @@ def get_server_list():
     for serverdata in serverlist.servers:
         data = get_server_data(serverdata)
 
+        if data is None:
+            print("Failed to get data from server: " + serverdata['ip'] + ":" + str(serverdata['port']))
+            continue
+
         if data['scores']['num_players'] == 0:
             allservers['empty'][data['address']] = data
 
@@ -53,7 +63,13 @@ def get_server_list():
 
 # run get_server_list() every 10 seconds
 
-while True:
-    get_server_list()
-    print("Updated server list.")
-    time.sleep(10)
+# while True:
+#     get_server_list()
+#     print("Updated server list.")
+#     time.sleep(10)
+
+with(open('test.json', 'w')) as f:
+    # write the json to a file
+    data = get_server_data(serverlist.servers[0])
+    if data is not None:
+        json.dump(data, f, indent=4)

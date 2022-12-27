@@ -2,21 +2,21 @@
     "active": {
         "81.25.18.133:55580": {
             "players": {
-                "2": {
-                    "clientId": "2",
-                    "name": "^7[^7gt^7]^7neiT^4.",
-                    "mddId": "2640",
-                    "logged": true,
-                    "country": "CZ",
-                    "nospec": false,
-                    "model": "n_duck",
-                    "headmodel": "wormsoulman_red"
-                },
-                "25": {
-                    "clientId": "25",
+                "26": {
+                    "clientId": "26",
                     "name": "^8HEJAZI",
-                    "mddId": "12705",
-                    "logged": true,
+                    "mddId": "0",
+                    "logged": false,
+                    "country": "EG",
+                    "nospec": false,
+                    "model": "major/blue",
+                    "headmodel": "major/blue"
+                },
+                "27": {
+                    "clientId": "27",
+                    "name": "^8HEJAZI",
+                    "mddId": "0",
+                    "logged": false,
                     "country": "EG",
                     "nospec": false,
                     "model": "major/blue",
@@ -28,108 +28,56 @@
             "defrag": "cpm.2",
             "scores": {
                 "num_players": "2",
-                "speed": "1775",
-                "speed_player_num": "-1",
-                "speed_player_name": "^8HEJAZI",
+                "speed": "1660",
+                "speed_player_num": "26",
+                "speed_player_name": "",
                 "players": [
                     {
-                        "player_num": "2",
-                        "time": "0",
-                        "ping": "16",
+                        "player_num": "26",
+                        "time": "16928",
+                        "ping": "112",
                         "follow_num": "-1"
                     },
                     {
-                        "player_num": "25",
+                        "player_num": "27",
                         "time": "0",
-                        "ping": "132",
-                        "follow_num": "-1"
+                        "ping": "112",
+                        "follow_num": "26"
                     }
                 ]
             },
             "address": "81.25.18.133:55580",
-            "timestamp": "2022-12-26 19:10:57.339985"
+            "timestamp": "2022-12-27 12:43:04.484708"
         },
         "81.25.18.133:55576": {
-            "players": {
-                "18": {
-                    "clientId": "18",
-                    "name": "your_name_you_wa\u0004",
-                    "mddId": "13098",
-                    "logged": true,
-                    "country": "PL",
-                    "nospec": false,
-                    "model": "klesk/red",
-                    "headmodel": "klesk/red"
-                },
-                "20": {
-                    "clientId": "20",
-                    "name": "XYLIGAN",
-                    "mddId": "4631",
-                    "logged": true,
-                    "country": "RU",
-                    "nospec": false,
-                    "model": "uriel/fearuth",
-                    "headmodel": "uriel/fearuth"
-                }
-            },
-            "map": "mistes-quickmix02",
+            "players": {},
+            "map": "test_bigbox",
             "hostname": "^7|^1|^4| ^3EU ^410gbit ^7cpm ^3II",
             "defrag": "cpm",
             "scores": {
-                "num_players": "2",
-                "speed": "1275",
+                "num_players": "0",
+                "speed": "0",
                 "speed_player_num": "-1",
-                "speed_player_name": "goluboi",
-                "players": [
-                    {
-                        "player_num": "20",
-                        "time": "70616",
-                        "ping": "84",
-                        "follow_num": "-1"
-                    },
-                    {
-                        "player_num": "18",
-                        "time": "80992",
-                        "ping": "32",
-                        "follow_num": "-1"
-                    }
-                ]
+                "speed_player_name": "",
+                "players": []
             },
             "address": "81.25.18.133:55576",
-            "timestamp": "2022-12-26 19:10:57.715584"
+            "timestamp": "2022-12-27 12:43:04.610143"
         },
         "81.25.18.133:55563": {
-            "players": {
-                "5": {
-                    "clientId": "5",
-                    "name": "^9<^7acc^9/^7Silex^6..",
-                    "mddId": "10576",
-                    "logged": true,
-                    "country": "DE",
-                    "nospec": false,
-                    "model": "bones/default",
-                    "headmodel": "bones/default"
-                }
-            },
-            "map": "dumbthology",
+            "players": {},
+            "map": "test_bigbox",
             "hostname": "^7|^1|^4| ^3EU ^410gbit ^7mixed ^3IV",
             "defrag": "vq3",
             "scores": {
-                "num_players": "1",
-                "speed": "954",
-                "speed_player_num": "5",
+                "num_players": "0",
+                "speed": "0",
+                "speed_player_num": "-1",
                 "speed_player_name": "",
-                "players": [
-                    {
-                        "player_num": "5",
-                        "time": "0",
-                        "ping": "36",
-                        "follow_num": "-1"
-                    }
-                ]
+                "players": []
             },
             "address": "81.25.18.133:55563",
-            "timestamp": "2022-12-26 19:10:57.967589"
+            "timestamp": "2022-12-27 12:43:04.712275"
         },
         "81.25.18.133:55575": {
             "players": {},
@@ -144,7 +92,7 @@
                 "players": []
             },
             "address": "81.25.18.133:55575",
-            "timestamp": "2022-12-26 19:10:58.069161"
+            "timestamp": "2022-12-27 12:43:04.818172"
         },
         "81.25.18.133:55570": {
             "players": {},
@@ -159,7 +107,7 @@
                 "players": []
             },
             "address": "81.25.18.133:55570",
-            "timestamp": "2022-12-26 19:10:58.173134"
+            "timestamp": "2022-12-27 12:43:04.931980"
         },
         "81.25.18.133:55571": {
             "players": {},
@@ -174,22 +122,40 @@
                 "players": []
             },
             "address": "81.25.18.133:55571",
-            "timestamp": "2022-12-26 19:10:58.335553"
+            "timestamp": "2022-12-27 12:43:05.040341"
         },
         "81.25.18.133:55560": {
-            "players": {},
-            "map": "test_bigbox",
+            "players": {
+                "7": {
+                    "clientId": "7",
+                    "name": "^4uN*DeaD^1|^3Sniper",
+                    "mddId": "0",
+                    "logged": false,
+                    "country": "US",
+                    "nospec": false,
+                    "model": "slash/sunkissed",
+                    "headmodel": "slash/sunkissed"
+                }
+            },
+            "map": "pcd",
             "hostname": "^7|^1|^4| ^3EU ^410gbit ^7mixed ^3I",
             "defrag": "vq3",
             "scores": {
-                "num_players": "0",
-                "speed": "0",
+                "num_players": "1",
+                "speed": "1015",
                 "speed_player_num": "-1",
-                "speed_player_name": "",
-                "players": []
+                "speed_player_name": "^2[^1PMS^2]^3G^7a^4",
+                "players": [
+                    {
+                        "player_num": "7",
+                        "time": "0",
+                        "ping": "54",
+                        "follow_num": "-1"
+                    }
+                ]
             },
             "address": "81.25.18.133:55560",
-            "timestamp": "2022-12-26 19:10:58.472023"
+            "timestamp": "2022-12-27 12:43:05.254286"
         }
     },
     "empty": {}

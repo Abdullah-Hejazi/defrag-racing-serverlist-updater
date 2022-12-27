@@ -1,0 +1,23 @@
+{
+    "players": [
+        {
+            "name": "\"^8HEJAZI\""
+        }
+    ],
+    "map": "kineterra1",
+    "hostname": "^7|^1|^4| ^3EU ^410gbit ^7fastcaps ^3I",
+    "defrag": "cpm.2",
+    "scores": {
+        "num_players": 1,
+        "speed": 0,
+        "speed_player_num": 0,
+        "speed_player_name": "",
+        "players": [
+            {
+                "name": "\"^8HEJAZI\""
+            }
+        ]
+    },
+    "address": "81.25.18.133:55580",
+    "timestamp": "2022-12-27 12:45:20.153619"
+}
