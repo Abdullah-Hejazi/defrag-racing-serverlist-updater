@@ -2,6 +2,7 @@ import json
 import server
 from datetime import datetime
 import time
+import os
 
 """ serverlist contains a variable called servers, that is an array of objects representing the servers """
 """ each object has the following properties: ip, port, rconpassword """
@@ -71,9 +72,13 @@ def get_server_list():
     with open('servers.json', 'w') as outfile:
         json.dump(allservers, outfile, indent=4)
 
-# run get_server_list() every 10 seconds
+def transfer_file_to_container():
+    os.system("docker cp " + serverlist.servers_file_location + " " + serverlist.container_file_location)
 
+
+# run get_server_list() every 10 seconds
 while True:
     get_server_list()
+    transfer_file_to_container()
     print("Updated server list.")
     time.sleep(10)
