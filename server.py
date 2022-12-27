@@ -13,7 +13,7 @@ class Server:
         if self.connected:
             return
 
-        self.socket.settimeout(3)
+        self.socket.settimeout(10)
         self.socket.connect((self.ip, self.port))
         self.connected = True
 
