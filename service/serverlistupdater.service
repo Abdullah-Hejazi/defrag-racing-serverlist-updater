@@ -7,7 +7,7 @@ After=network.target network-online.target
 User=root
 WorkingDirectory=/home/www/serverlistupdater
 Type=simple
-ExecStart=/usr/bin/python3 /home/www/serverlistupdater/serverlistupdater.py
+ExecStart=/usr/bin/python3 /home/www/serverlistupdater/serverlistupdater.py > /home/www/serverlistupdater/output.log
 
 [Install]
 WantedBy=multi-user.target
