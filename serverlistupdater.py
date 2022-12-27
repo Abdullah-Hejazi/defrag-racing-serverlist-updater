@@ -63,7 +63,7 @@ def get_server_list():
             print("Failed to get data from server: " + serverdata['ip'] + ":" + str(serverdata['port']))
             continue
 
-        if data['scores']['num_players'] == 0:
+        if data['scores']['num_players'] == '0':
             allservers['empty'][data['address']] = data
 
         else:
