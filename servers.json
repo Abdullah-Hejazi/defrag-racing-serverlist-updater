@@ -2,52 +2,27 @@
     "active": {
         "81.25.18.133:55580": {
             "players": {
-                "26": {
-                    "clientId": "26",
-                    "name": "^8HEJAZI",
-                    "mddId": "0",
-                    "logged": false,
-                    "country": "EG",
-                    "nospec": false,
-                    "model": "major/blue",
-                    "headmodel": "major/blue"
-                },
-                "27": {
-                    "clientId": "27",
-                    "name": "^8HEJAZI",
-                    "mddId": "0",
-                    "logged": false,
-                    "country": "EG",
-                    "nospec": false,
-                    "model": "major/blue",
-                    "headmodel": "major/blue"
+                "0": {
+                    "name": "\"^8HEJAZI\""
                 }
             },
             "map": "kineterra1",
             "hostname": "^7|^1|^4| ^3EU ^410gbit ^7fastcaps ^3I",
             "defrag": "cpm.2",
             "scores": {
-                "num_players": "2",
-                "speed": "1660",
-                "speed_player_num": "26",
+                "num_players": 1,
+                "speed": 0,
+                "speed_player_num": 0,
                 "speed_player_name": "",
                 "players": [
                     {
-                        "player_num": "26",
-                        "time": "16928",
-                        "ping": "112",
-                        "follow_num": "-1"
-                    },
-                    {
-                        "player_num": "27",
-                        "time": "0",
-                        "ping": "112",
-                        "follow_num": "26"
+                        "name": "\"^8HEJAZI\""
                     }
                 ]
             },
             "address": "81.25.18.133:55580",
-            "timestamp": "2022-12-27 12:43:04.484708"
+            "timestamp": "2022-12-27 13:07:40.985712",
+            "notice": "The data provided for this server is not complete, because the script does not have the rcon password for this server. Contact [neyo#0382] on discord to attach the rcon password for your server."
         },
         "81.25.18.133:55576": {
             "players": {},
@@ -62,7 +37,7 @@
                 "players": []
             },
             "address": "81.25.18.133:55576",
-            "timestamp": "2022-12-27 12:43:04.610143"
+            "timestamp": "2022-12-27 13:07:41.103602"
         },
         "81.25.18.133:55563": {
             "players": {},
@@ -77,7 +52,7 @@
                 "players": []
             },
             "address": "81.25.18.133:55563",
-            "timestamp": "2022-12-27 12:43:04.712275"
+            "timestamp": "2022-12-27 13:07:41.217499"
         },
         "81.25.18.133:55575": {
             "players": {},
@@ -92,7 +67,7 @@
                 "players": []
             },
             "address": "81.25.18.133:55575",
-            "timestamp": "2022-12-27 12:43:04.818172"
+            "timestamp": "2022-12-27 13:07:41.351508"
         },
         "81.25.18.133:55570": {
             "players": {},
@@ -107,7 +82,7 @@
                 "players": []
             },
             "address": "81.25.18.133:55570",
-            "timestamp": "2022-12-27 12:43:04.931980"
+            "timestamp": "2022-12-27 13:07:41.447382"
         },
         "81.25.18.133:55571": {
             "players": {},
@@ -122,40 +97,88 @@
                 "players": []
             },
             "address": "81.25.18.133:55571",
-            "timestamp": "2022-12-27 12:43:05.040341"
+            "timestamp": "2022-12-27 13:07:41.569635"
         },
         "81.25.18.133:55560": {
             "players": {
                 "7": {
                     "clientId": "7",
                     "name": "^4uN*DeaD^1|^3Sniper",
-                    "mddId": "0",
-                    "logged": false,
+                    "mddId": "11287",
+                    "logged": true,
                     "country": "US",
                     "nospec": false,
                     "model": "slash/sunkissed",
                     "headmodel": "slash/sunkissed"
+                },
+                "12": {
+                    "clientId": "12",
+                    "name": "^2<^7acc^2/^7st^2e^7p",
+                    "mddId": "0",
+                    "logged": false,
+                    "country": "DE",
+                    "nospec": false,
+                    "model": "visor/green",
+                    "headmodel": "visor/green"
+                },
+                "13": {
+                    "clientId": "13",
+                    "name": "^2Sonic^1Mattster",
+                    "mddId": "0",
+                    "logged": false,
+                    "country": "MY",
+                    "nospec": true,
+                    "model": "uriel/blue",
+                    "headmodel": "xaero/green"
+                },
+                "14": {
+                    "clientId": "14",
+                    "name": "^3'^7Roman^3,",
+                    "mddId": "4355",
+                    "logged": true,
+                    "country": "RU",
+                    "nospec": false,
+                    "model": "doom/phobos",
+                    "headmodel": "doom/phobos"
                 }
             },
-            "map": "pcd",
+            "map": "karumofobia",
             "hostname": "^7|^1|^4| ^3EU ^410gbit ^7mixed ^3I",
             "defrag": "vq3",
             "scores": {
-                "num_players": "1",
-                "speed": "1015",
-                "speed_player_num": "-1",
-                "speed_player_name": "^2[^1PMS^2]^3G^7a^4",
+                "num_players": "4",
+                "speed": "1242",
+                "speed_player_num": "12",
+                "speed_player_name": "",
                 "players": [
                     {
-                        "player_num": "7",
-                        "time": "0",
-                        "ping": "54",
+                        "player_num": "12",
+                        "time": "6376",
+                        "ping": "29",
                         "follow_num": "-1"
+                    },
+                    {
+                        "player_num": "7",
+                        "time": "8168",
+                        "ping": "52",
+                        "follow_num": "-1"
+                    },
+                    {
+                        "player_num": "13",
+                        "time": "0",
+                        "ping": "999",
+                        "follow_num": "-1"
+                    },
+                    {
+                        "player_num": "14",
+                        "time": "0",
+                        "ping": "29",
+                        "follow_num": "12"
                     }
                 ]
             },
             "address": "81.25.18.133:55560",
-            "timestamp": "2022-12-27 12:43:05.254286"
+            "timestamp": "2022-12-27 13:07:42.163844"
         }
     },
     "empty": {}

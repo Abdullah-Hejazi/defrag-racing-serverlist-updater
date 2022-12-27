@@ -23,19 +23,29 @@ def parse_server_data(data):
     }
 
 def get_server_data(serverdata):
-    connection = server.Server(serverdata['ip'], serverdata['port'])
+    try:
+        connection = server.Server(serverdata['ip'], serverdata['port'])
 
-    if 'rconpassword' in serverdata:
-        result = connection.get_rcon_data(serverdata['rconpassword'])
-    else:
-        result = connection.get_data()
+        if 'rconpassword' in serverdata:
+            result = connection.get_rcon_data(serverdata['rconpassword'])
+        else:
+            result = connection.get_data()
+            
 
-    if result is None:
+        if result is None:
+            return None
+
+        result['address'] = serverdata['ip'] + ':' + str(serverdata['port'])
+
+        result['timestamp'] = str(datetime.now())
+
+        if 'rconpassword' not in serverdata:
+            result['notice'] = 'The data provided for this server is not complete, because the script does not have the rcon password for this server. Contact [neyo#0382] on discord to attach the rcon password for your server.'
+
+    except Exception as exception:
+        print('Failed to connect to server: ' + serverdata['ip'] + ':' + str(serverdata['port']))
+        print('Reason: ' + str(exception))
         return None
-
-    result['address'] = serverdata['ip'] + ':' + str(serverdata['port'])
-
-    result['timestamp'] = str(datetime.now())
 
     return result
 
@@ -63,13 +73,7 @@ def get_server_list():
 
 # run get_server_list() every 10 seconds
 
-# while True:
-#     get_server_list()
-#     print("Updated server list.")
-#     time.sleep(10)
-
-with(open('test.json', 'w')) as f:
-    # write the json to a file
-    data = get_server_data(serverlist.servers[0])
-    if data is not None:
-        json.dump(data, f, indent=4)
+while True:
+    get_server_list()
+    print("Updated server list.")
+    time.sleep(10)

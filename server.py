@@ -13,12 +13,9 @@ class Server:
         if self.connected:
             return
 
-        try:
-            self.socket.connect((self.ip, self.port))
-            self.connected = True
-        except e:
-            print(e)
-            self.connected = False
+        self.socket.settimeout(3)
+        self.socket.connect((self.ip, self.port))
+        self.connected = True
 
     def get_rcon_data(self, rconpass):
         self.socket.sendall(b'\xff\xff\xff\xffrcon ' + bytes(rconpass, encoding='utf8') + b' score\x00')
@@ -66,8 +63,16 @@ class Server:
 
         serverdata['players'] = self.parse_players(players)
 
+        playerlist = {}
+
+        i = 0
+        for player in serverdata['players']:
+            playerlist[i] = player
+
+            i += 1
+
         result = {
-            'players': serverdata['players'],
+            'players': playerlist,
             'map': serverdata['mapname'],
             'hostname': serverdata['sv_hostname'],
             'defrag': self.get_game_mode(serverdata),
