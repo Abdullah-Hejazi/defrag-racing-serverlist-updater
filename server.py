@@ -1,4 +1,6 @@
 import socket
+import platform
+import subprocess
 
 class Server:
     def __init__(self, ip, port):
@@ -13,7 +15,7 @@ class Server:
         if self.connected:
             return
 
-        self.socket.settimeout(10)
+        self.socket.settimeout(2)
         self.socket.connect((self.ip, self.port))
         self.connected = True
 
