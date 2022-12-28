@@ -23,6 +23,9 @@ class Server:
         self.socket.sendall(b'\xff\xff\xff\xffrcon ' + bytes(rconpass, encoding='utf8') + b' score\x00')
         data = self.socket.recv(4096)
 
+        if 'Bad rconpassword' in data.decode('latin1'):
+            raise Exception('Bad rconpassword')
+
         data = data[10:].decode('utf8').split('\n')
 
         scores = []

@@ -74,9 +74,8 @@ def get_server_list():
 def transfer_file_to_container():
     os.system("docker cp " + serverlist.servers_file_location + " " + serverlist.container_file_location)
 
-
 while True:
     get_server_list()
     transfer_file_to_container()
     print("Updated server list.")
-    time.sleep(8)
+    time.sleep(10)
