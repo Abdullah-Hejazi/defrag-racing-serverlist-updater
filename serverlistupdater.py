@@ -31,7 +31,9 @@ def get_server_data(serverdata):
             result = connection.get_rcon_data(serverdata['rconpassword'])
         else:
             result = connection.get_data()
-            
+
+        if result == 'Bad rconpassword':
+            result = connection.get_data()
 
         if result is None:
             return None
@@ -56,7 +58,15 @@ def get_server_list():
         'empty': {}
     }
 
+    onlineservers = []
+    with open('onlineservers.txt', 'r') as infile:
+        for line in infile:
+            onlineservers.append(line.strip())
+
     for serverdata in serverlist.servers:
+        if serverdata['ip'] + ':' + str(serverdata['port']) not in onlineservers:
+            continue
+
         data = get_server_data(serverdata)
 
         if data is None:

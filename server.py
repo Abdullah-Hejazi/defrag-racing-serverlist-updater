@@ -15,7 +15,7 @@ class Server:
         if self.connected:
             return
 
-        self.socket.settimeout(2)
+        self.socket.settimeout(1)
         self.socket.connect((self.ip, self.port))
         self.connected = True
 
@@ -24,7 +24,7 @@ class Server:
         data = self.socket.recv(4096)
 
         if 'Bad rconpassword' in data.decode('latin1'):
-            raise Exception('Bad rconpassword')
+            return 'Bad rconpassword'
 
         data = data[10:].decode('utf8').split('\n')
 
