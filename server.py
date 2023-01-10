@@ -146,10 +146,10 @@ class Server:
         # parse player scores, 4 values per player
         while len(data) > 0:
             player = {}
-            player['player_num'] = data.pop(0)
-            player['time'] = data.pop(0)
-            player['ping'] = data.pop(0)
-            player['follow_num'] = data.pop(0)
+            player['player_num'] = int(data.pop(0))
+            player['time'] = int(data.pop(0))
+            player['ping'] = int(data.pop(0))
+            player['follow_num'] = int(data.pop(0))
 
             scores['players'].append(player)
 
