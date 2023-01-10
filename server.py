@@ -47,7 +47,8 @@ class Server:
             players[player]['country'] = playerinfo['tld']
             players[player]['nospec'] = playerinfo['color1'] == 'nospec'
             players[player]['model'] = playerinfo['model']
-            players[player]['headmodel'] = playerinfo['team_headmodel']
+            players[player]['headmodel'] = playerinfo['model']
+            #playerinfo['team_headmodel']
 
 
         result = {
