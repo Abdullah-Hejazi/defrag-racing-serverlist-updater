@@ -1,6 +1,7 @@
 import socket
 import platform
 import subprocess
+import time
 
 class Server:
     def __init__(self, ip, port):
@@ -15,7 +16,7 @@ class Server:
         if self.connected:
             return
 
-        self.socket.settimeout(1)
+        self.socket.settimeout(2)
         self.socket.connect((self.ip, self.port))
         self.connected = True
 
@@ -43,13 +44,16 @@ class Server:
         for player in players:
             playerinfo = self.get_player_info(players[player], rconpass)
 
+            if playerinfo == False:
+                playerinfo = self.get_player_info(players[player], rconpass)
 
-            players[player]['country'] = playerinfo['tld']
-            players[player]['nospec'] = playerinfo['color1'] == 'nospec'
-            players[player]['model'] = playerinfo['model']
-            players[player]['headmodel'] = playerinfo['model']
-            #playerinfo['team_headmodel']
 
+            players[player]['country'] = playerinfo['tld'] if 'tld' in playerinfo else 'unknown'
+            players[player]['nospec'] = playerinfo['color1'] == 'nospec' if 'color1' in playerinfo else False
+            players[player]['model'] = playerinfo['model'] if 'model' in playerinfo else 'sarge'
+            players[player]['headmodel'] = playerinfo['headmodel'] if 'headmodel' in playerinfo else 'sarge'
+
+            time.sleep(0.2)
 
         result = {
             'players': players,
@@ -101,7 +105,10 @@ class Server:
 
     def get_player_info(self, player, rconpass):
         self.socket.sendall(b'\xff\xff\xff\xffrcon ' + bytes(rconpass, encoding='utf8') + b' dumpuser ' + bytes(player['clientId'], encoding='utf8') + b'\x00')
-        data = self.socket.recv(16384)
+        data = self.socket.recv(4096)
+        
+        if 'print\nscores' in data.decode('latin1') or 'print\n<player>' in data.decode('latin1'):
+            return False
 
         data = data[28:].decode('utf8').split('\n')
 
