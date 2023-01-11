@@ -29,7 +29,7 @@ class Server:
 
         data = data[10:].decode('utf8').split('\n')
 
-        scores = []
+        scores = {}
         players = {}
 
         for line in data:

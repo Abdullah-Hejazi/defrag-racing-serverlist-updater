@@ -45,6 +45,8 @@ def get_server_data(serverdata):
         if 'rconpassword' not in serverdata:
             result['notice'] = 'The data provided for this server is not complete, because the script does not have the rcon password for this server. Contact [neyo#0382] on discord to attach the rcon password for your server.'
 
+        return result
+
     except Exception as exception:
         print('Failed to connect to server: ' + serverdata['ip'] + ':' + str(serverdata['port']))
         print('Reason: ' + str(exception))
