@@ -8,21 +8,6 @@ import os
 """ each object has the following properties: ip, port, rconpassword """
 import serverlist
 
-def parse_server_data(data):
-    players = []
-
-    for player in data['players']:
-        players.append({
-            'name': str(player['name'].decode('utf-8').replace('\"', '')),
-        })
-
-    return {
-        #'address': data['ip'] + ':' + str(data['port']),
-        'map': data['mapname'],
-        'hostname': data['sv_hostname'],
-        'players': players
-    }
-
 def get_server_data(serverdata):
     try:
         connection = server.Server(serverdata['ip'], serverdata['port'])
