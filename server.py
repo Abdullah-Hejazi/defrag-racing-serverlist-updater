@@ -22,7 +22,7 @@ class Server:
 
     def get_rcon_data(self, rconpass):
         self.socket.sendall(b'\xff\xff\xff\xffrcon ' + bytes(rconpass, encoding='utf8') + b' score\x00')
-        data = self.socket.recv(4096)
+        data = self.socket.recv(8192)
 
         if 'Bad rconpassword' in data.decode('latin1'):
             return 'Bad rconpassword'
@@ -42,11 +42,10 @@ class Server:
                 scores = self.parse_scores(line)
 
         for player in players:
-            playerinfo = self.get_player_info(players[player], rconpass)
+            playerinfo, scores = self.get_player_info(players[player], rconpass, scores)
 
             if playerinfo == False:
-                playerinfo = self.get_player_info(players[player], rconpass)
-
+                playerinfo, scores = self.get_player_info(players[player], rconpass, scores)
 
             players[player]['country'] = playerinfo['tld'] if 'tld' in playerinfo else 'unknown'
             players[player]['nospec'] = playerinfo['color1'] == 'nospec' if 'color1' in playerinfo else False
@@ -103,14 +102,19 @@ class Server:
 
         return physics + mode
 
-    def get_player_info(self, player, rconpass):
+    def get_player_info(self, player, rconpass, scores={}):
         self.socket.sendall(b'\xff\xff\xff\xffrcon ' + bytes(rconpass, encoding='utf8') + b' dumpuser ' + bytes(player['clientId'], encoding='utf8') + b'\x00')
         data = self.socket.recv(4096)
+
+        if scores == {} and 'scores ' in data.decode('latin1'):
+            for line in data[28:].decode('latin1').split('\n'):
+                if line.startswith('scores'):
+                    scores = self.parse_scores(line)
         
         if 'print\nscores' in data.decode('latin1') or 'print\n<player>' in data.decode('latin1'):
-            return False
+            return False, scores
 
-        data = data[28:].decode('utf8').split('\n')
+        data = data[28:].decode('latin1').split('\n')
 
         result = {}
 
@@ -118,7 +122,7 @@ class Server:
             key, value = self.extract_key_value_pair(line)
             result[key] = value
 
-        return result
+        return result, scores
 
     def extract_key_value_pair(self, line):
         if line == '':

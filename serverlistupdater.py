@@ -55,11 +55,10 @@ def get_server_list():
             continue
 
         data = get_server_data(serverdata)
+        # print(json.dumps(data, indent=4))
 
         if data is None or 'scores' not in data or 'num_players' not in data['scores']:
             continue
-
-        print(str(data))
 
         if data['scores']['num_players'] == 0:
             allservers['empty'][data['address']] = data
