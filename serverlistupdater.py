@@ -56,7 +56,7 @@ def get_server_list():
 
         data = get_server_data(serverdata)
 
-        if data is None:
+        if data is None or data['scores'] is None:
             continue
 
         if data['scores']['num_players'] == 0:
