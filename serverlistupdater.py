@@ -56,8 +56,10 @@ def get_server_list():
 
         data = get_server_data(serverdata)
 
-        if data is None or 'scores' not in data:
+        if data is None or 'scores' not in data or 'num_players' not in data['scores']:
             continue
+
+        print(str(data))
 
         if data['scores']['num_players'] == 0:
             allservers['empty'][data['address']] = data
