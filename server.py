@@ -163,7 +163,7 @@ class Server:
         scores['num_players'] = int(data.pop(0))
         scores['speed'] = int(data.pop(0))
         scores['speed_player_num'] = int(data.pop(0))
-        scores['speed_player_name'] = data.pop(0)[1:-1]
+        scores['speed_player_name'] = data.pop(0)
 
         scores['players'] = []
 
