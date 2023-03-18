@@ -151,7 +151,13 @@ class Server:
 
     def parse_scores(self, data):
         scores = {}
-        data = data.replace('scores ', '').split(' ')
+        parsed = data.replace('scores ', '').split('"')
+        data = parsed[0].strip().split(' ')
+
+        data.append(parsed[1])
+
+        data = data + parsed[2].strip().split(' ')
+
 
         scores['num_players'] = int(data.pop(0))
         scores['speed'] = int(data.pop(0))
