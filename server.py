@@ -167,6 +167,9 @@ class Server:
 
         scores['players'] = []
 
+        if len(data) <= 1:
+            return scores
+
         # parse player scores, 4 values per player
         while len(data) > 0:
             player = {}
