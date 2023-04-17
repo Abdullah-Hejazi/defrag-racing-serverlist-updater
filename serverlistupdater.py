@@ -76,7 +76,9 @@ def get_server_list():
         json.dump(allservers, outfile, indent=4)
 
 def transfer_file_to_container():
-    os.system("docker cp " + serverlist.servers_file_location + " " + serverlist.container_file_location)
+    timestamp = str(datetime.now().strftime('%Y-%m-%d_%H:%M:%S'))
+
+    os.system("docker cp " + serverlist.servers_file_location + " 8036c7b0902f:/var/www/html/files/" + timestamp + ".json")
 
 while True:
     get_server_list()
