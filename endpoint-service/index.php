@@ -10,6 +10,16 @@
         }
     }
 
+    function delete_files($files) {
+        if (count($files) == 0) {
+            return;
+        }
+
+        for ($i = 0; $i < count($files); $i++) {
+            unlink('files/' . $files[$i] . '.json');
+        }
+    }
+
     function get_latest_file($dir) {
         $files = [];
 
@@ -25,7 +35,11 @@
 
         usort($files, 'compare_timestamps');
 
-        return $files[count($files) - 1];
+        $last_file = array_pop($files);
+
+        delete_files($files);
+
+        return $last_file;
     }
 
     function read_data($file) {
