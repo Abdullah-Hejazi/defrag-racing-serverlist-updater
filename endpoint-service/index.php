@@ -29,6 +29,10 @@
     }
 
     function read_data($file) {
+        if (!file_exists($file)) {
+            return [];
+        }
+
         $json_string = file_get_contents($file);
 
         if (!$json_string) {
