@@ -50,7 +50,13 @@ def get_server_list():
         for line in infile:
             onlineservers.append(line.strip())
 
-    for serverdata in serverlist.servers:
+    if not os.path.isfile('serverlist.json'):
+        serversdata = []
+    else:
+        with open('serverlist.json') as jsonfile:
+            serversdata = json.load(jsonfile)
+
+    for serverdata in serversdata:
         if serverdata['ip'] + ':' + str(serverdata['port']) not in onlineservers:
             continue
 

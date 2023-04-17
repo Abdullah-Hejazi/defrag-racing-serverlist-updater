@@ -1,7 +1,7 @@
 import json
 import server
-import serverlist
 import time
+import os
 
 def server_online(serverdata):
     try:
@@ -29,7 +29,13 @@ def server_online(serverdata):
 def validate_servers():
     onlineservers = []
 
-    for serverdata in serverlist.servers:
+    if not os.path.isfile('serverlist.json'):
+        serversdata = []
+    else:
+        with open('serverlist.json') as jsonfile:
+            serversdata = json.load(jsonfile)
+
+    for serverdata in serversdata:
         if server_online(serverdata):
             onlineservers.append(serverdata['ip'] + ':' + str(serverdata['port']))
         else:
