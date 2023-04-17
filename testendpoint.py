@@ -12,8 +12,12 @@ def test_endpoint():
 
 if __name__ == "__main__":
     while True:
-        if test_endpoint():
-            pass
-        else:
-            print("Endpoint is down")
-        time.sleep(1)
+        try:
+            if test_endpoint():
+                pass
+            else:
+                print("Endpoint is down")
+            time.sleep(0.5)
+        except Exception as e:
+            print(e)
+            time.sleep(0.5)
