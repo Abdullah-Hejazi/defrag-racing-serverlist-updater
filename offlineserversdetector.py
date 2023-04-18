@@ -41,6 +41,9 @@ def validate_servers():
         else:
             print('Server offline: ' + serverdata['ip'] + ':' + str(serverdata['port']))
 
+        if "wait" in serverdata:
+            time.sleep(int(serverdata["wait"]))
+
     with open('onlineservers.txt', 'w') as outfile:
         for server in onlineservers:
             outfile.write(server + '\n')
