@@ -4,17 +4,21 @@ import time
 URL = "https://servers.defrag.racing/"
 
 def test_endpoint():
-    response = requests.get(URL)
-    if response.status_code == 502:
-        return False
-
-    return True
+    try:
+        r = requests.get(URL).json()
+        return r
+    except:
+        return {}
 
 if __name__ == "__main__":
     while True:
         try:
-            if test_endpoint():
-                pass
+            data = test_endpoint()
+            if "active" in data:
+                if "80.209.233.26:27961" in data["active"]:
+                    print("Endpoint is up")
+                else:
+                    print("Endpoint is down")
             else:
                 print("Endpoint is down")
             time.sleep(0.5)

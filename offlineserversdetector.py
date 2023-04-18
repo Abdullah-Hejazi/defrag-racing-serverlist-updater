@@ -2,6 +2,7 @@ import json
 import server
 import time
 import os
+import traceback
 
 def server_online(serverdata):
     try:
@@ -21,6 +22,7 @@ def server_online(serverdata):
         return True
 
     except Exception as exception:
+        print(traceback.format_exc())
         print(exception)
         return False
 
@@ -51,5 +53,5 @@ def validate_servers():
 
 while True:
     validate_servers()
-    print("\n\n\n\n")
-    time.sleep(120)
+    print("Finished \n\n\n\n")
+    time.sleep(60)

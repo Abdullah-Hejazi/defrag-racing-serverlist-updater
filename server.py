@@ -47,15 +47,16 @@ class Server:
             if playerinfo == False:
                 playerinfo, scores = self.get_player_info(players[player], rconpass, scores)
 
-            players[player]['country'] = playerinfo['tld'] if 'tld' in playerinfo else 'unknown'
+            if playerinfo != False:
+                players[player]['country'] = playerinfo['tld'] if 'tld' in playerinfo else 'unknown'
 
-            if 'color1' in playerinfo:
-                players[player]['nospec'] = playerinfo['color1'] == 'nospec' or playerinfo['color1'] == 'nospecpm'
-            else:
-                players[player]['nospec'] = False
+                if 'color1' in playerinfo:
+                    players[player]['nospec'] = playerinfo['color1'] == 'nospec' or playerinfo['color1'] == 'nospecpm'
+                else:
+                    players[player]['nospec'] = False
 
-            players[player]['model'] = playerinfo['model'] if 'model' in playerinfo else 'sarge'
-            players[player]['headmodel'] = playerinfo['headmodel'] if 'headmodel' in playerinfo else 'sarge'
+                players[player]['model'] = playerinfo['model'] if 'model' in playerinfo else 'sarge'
+                players[player]['headmodel'] = playerinfo['headmodel'] if 'headmodel' in playerinfo else 'sarge'
 
             time.sleep(0.2)
 
